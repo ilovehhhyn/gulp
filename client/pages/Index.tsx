@@ -3,9 +3,9 @@ import WaterDroplet from "@/components/WaterDroplet";
 
 const poetryText = `sip                                                                                                                                         gulp
 
-          welcome to gulp,                                                                                              where you rank                                                            sip
-                                   the waters                                                            gulp                                     sip
-                                                                                                     for all to sip                                             gulp
+          welcome to gulp,                                                                                   where you rank                                                            sip
+                                   the waters                                    gulp           
+                                                                                                for all to sip                                             gulp
            and gulp                                                                                              and enjoy.
                     sip                              gulp                                                                             gulp`;
 
