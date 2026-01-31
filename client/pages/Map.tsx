@@ -47,7 +47,7 @@ export default function Map() {
       <div className="max-w-6xl mx-auto mb-12">
         <h1 className="text-6xl lg:text-7xl font-light">water map</h1>
         <div className="text-gray-600 mt-4">
-          <p>All gulp submissions. Click to view ID.</p>
+          <p>All gulp submissions organized from hi to lo. Click to view ID. Have fun gulping!</p>
         </div>
       </div>
 
