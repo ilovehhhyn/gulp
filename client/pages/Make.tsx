@@ -211,6 +211,7 @@ export default function Make() {
                     type="text"
                     name="name"
                     value={formData.name}
+                    placeholder="yours or water's name"
                     onChange={handleInputChange}
                     className="w-full px-3 py-2 border border-black bg-white focus:outline-none focus:ring-1 focus:ring-black text-sm"
                     disabled={isSubmitting}
