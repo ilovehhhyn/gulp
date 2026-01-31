@@ -47,9 +47,11 @@ export default function Map() {
       <div className="max-w-6xl mx-auto mb-12">
         <h1 className="text-6xl lg:text-7xl font-light">water map</h1>
         <div className="text-gray-600 mt-4">
-          <p>All gulp submissions organized from hi to lo. Click to view ID. Have fun gulping!</p>
+          <p>All gulp submissions from high to low ranking. Click to view ID. 
+            Hope you have a good gulp! </p>
         </div>
       </div>
+    
 
       {/* Loading State */}
       {isLoading && (
