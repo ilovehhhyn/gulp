@@ -15,7 +15,13 @@ export default function Map() {
         setIsLoading(true);
         setError(null);
         const ratings = await getAllWaterRatings();
-        setSubmissions(ratings);
+        // Sort by rating from high to low
+        const sortedRatings = [...ratings].sort((a, b) => {
+          const ratingA = parseFloat(a.rating) || 0;
+          const ratingB = parseFloat(b.rating) || 0;
+          return ratingB - ratingA;
+        });
+        setSubmissions(sortedRatings);
       } catch (err) {
         console.error("Error fetching ratings:", err);
         setError("Failed to load water ratings. Please try again later.");
@@ -41,7 +47,7 @@ export default function Map() {
       <div className="max-w-6xl mx-auto mb-12">
         <h1 className="text-6xl lg:text-7xl font-light">water map</h1>
         <div className="text-gray-600 mt-4">
-          <p>All gulp submissions. Click to view details.</p>
+          <p>All gulp submissions. Click to view ID.</p>
         </div>
       </div>
 
