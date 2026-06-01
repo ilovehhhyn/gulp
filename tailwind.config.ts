@@ -13,7 +13,20 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['"Source Sans Pro"', 'sans-serif'],
+      },
       colors: {
+        guulp: {
+          card: '#D0DFD6',
+          cream: '#FBF3E4',
+          peach: '#F4A77E',
+          aqua: '#5FD0C5',
+          'title-yellow': '#F5E000',
+          'pink-light': '#F8D7E3',
+          'pink-bright': '#F25FA0',
+          charcoal: '#3A3A3A',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

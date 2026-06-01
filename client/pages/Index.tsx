@@ -1,130 +1,87 @@
-import { useState } from "react";
-import WaterDroplet from "@/components/WaterDroplet";
+import { useNavigate } from "react-router-dom";
 
-const poetryText = `sip                                                                                                                                         gulp
+const TEAL = "#78EBD2";
+const CALIBRI = "'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif";
 
-          welcome to gulp,                                                                                      where you rank                                                            sip
-                                the waters                                                                    
-                                                                                                for all to sip                                             gulp
-           and gulp                                                                                              and enjoy.
-                    sip                              gulp                                                                             gulp`;
+const btnStyle: React.CSSProperties = {
+  width: "300px",
+  height: "96px",
+  borderRadius: "50%",
+  backgroundColor: "transparent",
+  color: TEAL,
+  fontFamily: CALIBRI,
+  fontSize: "1.55rem",
+  fontWeight: 700,
+  border: `4px solid ${TEAL}`,
+  cursor: "pointer",
+  boxShadow: "none",
+  transition: "opacity 0.18s ease",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  letterSpacing: "0.04em",
+};
 
 export default function Index() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
-
-  const handleMobileClick = () => {
-    // Only trigger modal on touch devices
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      setShowModal(true);
-    }
-  };
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-8 overflow-hidden relative">
-      {/* Background Poetry Text - Desktop (hover to show) */}
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+        backgroundImage: "url('/coverwithwords.png?v=2')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+      }}
+    >
+      {/* Both buttons stacked on the right, shifted up */}
       <div
-        className={`hidden md:block fixed top-0 left-0 w-screen h-screen text-gray-400 whitespace-pre pointer-events-none select-none overflow-hidden font-mono p-4 transition-opacity duration-300 z-50 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ fontSize: "18px", lineHeight: "2.5" }}
+        style={{
+          position: "absolute",
+          right: "8%",
+          top: "38%",
+          transform: "translateY(-50%)",
+          display: "flex",
+          flexDirection: "column",
+          gap: "1.6rem",
+          alignItems: "center",
+        }}
       >
-        {poetryText}
-      </div>
-
-      {/* Mobile Modal */}
-      {showModal && (
-        <div className="md:hidden fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-sm w-full max-h-[80vh] overflow-auto p-6 relative">
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-2xl leading-none"
-            >
-              ×
-            </button>
-            <div className="text-gray-500 font-mono text-xs whitespace-pre-wrap overflow-x-auto">
-              {poetryText}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Title Image */}
-      <div
-        className="mb-6 cursor-pointer"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleMobileClick}
-      >
-        <img
-          src="/gulp-title.png"
-          alt="Gulp"
-          className={`w-80 md:w-96 lg:w-[650px] h-auto transition-transform duration-200 ${
-            isHovered ? "scale-95" : "scale-100"
-          }`}
-        />
-      </div>
-
-      {/* Subtitle Image */}
-      <div
-        className="mb-10 cursor-pointer"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleMobileClick}
-      >
-        <img
-          src="/subtitle.png"
-          alt="Subtitle"
-          className={`w-32 md:w-40 lg:w-48 h-auto transition-transform duration-200 ${
-            isHovered ? "scale-95" : "scale-100"
-          }`}
-        />
-      </div>
-
-      {/* Floating Water Droplets Container */}
-      <div className="relative w-full flex items-center justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 h-96">
-        {/* Make Droplet - Left */}
+        {/* Label above buttons */}
         <div
-          className="w-24 sm:w-32 md:w-40 flex items-center justify-center"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          style={{
+            fontFamily: CALIBRI,
+            fontSize: "1.2rem",
+            fontWeight: 700,
+            color: TEAL,
+            letterSpacing: "0.08em",
+            textAlign: "center",
+            marginBottom: "0.4rem",
+          }}
         >
-          <div
-            className="animate-float"
-            style={{ animationDelay: "0s" }}
-          >
-            <WaterDroplet
-              label="make"
-              to="/make"
-              animationClass="block"
-              imageUrl="/droplet-custom.png"
-              labelImageUrl="/make-label.png"
-            />
-          </div>
+          GUULP: water archive
         </div>
+        <button
+          onClick={() => navigate("/entry")}
+          style={btnStyle}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = "0.7"; }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = "1"; }}
+        >
+          entry
+        </button>
 
-        {/* Map Droplet - Right */}
-        <div
-          className="w-24 sm:w-32 md:w-40 flex items-center justify-center"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+        <button
+          onClick={() => navigate("/archive")}
+          style={btnStyle}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = "0.7"; }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = "1"; }}
         >
-          <div
-            className="animate-float-slow"
-            style={{ animationDelay: "0.5s" }}
-          >
-            <WaterDroplet
-              label="map"
-              to="/map"
-              animationClass="block"
-              imageUrl="/droplet-custom.png"
-              labelImageUrl="/map-label.png"
-            />
-          </div>
-        </div>
+          archive
+        </button>
       </div>
     </div>
   );
