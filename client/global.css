@@ -101,25 +101,3 @@
   }
 }
 
-/* Orientation lock — portrait on small screens */
-.rotate-notice {
-  display: none;
-  position: fixed;
-  inset: 0;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  background: #FBF3E4;
-  font-family: "Source Sans Pro", sans-serif;
-  z-index: 9999;
-}
-
-@media (max-width: 900px) and (orientation: portrait) {
-  .app-root {
-    display: none;
-  }
-  .rotate-notice {
-    display: flex;
-  }
-}

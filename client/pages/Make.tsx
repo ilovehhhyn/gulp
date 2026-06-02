@@ -93,23 +93,24 @@ export default function Make() {
   return (
     <div
       style={{
-        width: "100vw",
-        height: "100vh",
-        overflow: "auto",
+        minHeight: "100vh",
         backgroundImage: "url('/entrybackground.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "scroll",
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "flex-start",
+        padding: "2rem 0",
       }}
     >
       {/* Card */}
       <div
         style={{
-          marginLeft: "6vw",
-          width: "680px",
+          marginLeft: "clamp(1rem, 6vw, 6vw)",
+          marginRight: "clamp(1rem, 6vw, 6vw)",
+          width: "min(680px, 88vw)",
           backgroundColor: "rgba(255, 255, 255, 0.6)",
           borderRadius: "0",
           border: "none",
