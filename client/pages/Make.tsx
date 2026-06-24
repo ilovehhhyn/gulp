@@ -94,6 +94,8 @@ export default function Make() {
     <div
       style={{
         minHeight: "100vh",
+        overflowY: "auto",
+        WebkitOverflowScrolling: "touch" as React.CSSProperties["WebkitOverflowScrolling"],
         backgroundImage: "url('/entrybackground.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -102,7 +104,7 @@ export default function Make() {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        padding: "2rem 0",
+        padding: "2rem 0 3rem",
       }}
     >
       {/* Card */}

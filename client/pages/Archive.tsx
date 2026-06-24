@@ -48,7 +48,7 @@ export default function Archive() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "scroll",
         paddingBottom: "4rem",
       }}
     >

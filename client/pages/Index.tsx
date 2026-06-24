@@ -31,10 +31,7 @@ export default function Index() {
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        backgroundImage: "url('/coverwithwords.png?v=2')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundColor: "pink",
         position: "relative",
       }}
     >
