@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 const TEAL = "#78EBD2";
-const CALIBRI = "'Calibri', 'Gill Sans', 'Trebuchet MS', sans-serif";
+const ARIAL = "'Arial', sans-serif";
 
 const btnStyle: React.CSSProperties = {
   width: "300px",
@@ -9,7 +9,7 @@ const btnStyle: React.CSSProperties = {
   borderRadius: "50%",
   backgroundColor: "transparent",
   color: TEAL,
-  fontFamily: CALIBRI,
+  fontFamily: ARIAL,
   fontSize: "1.55rem",
   fontWeight: 700,
   border: `4px solid ${TEAL}`,
@@ -31,37 +31,33 @@ export default function Index() {
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        backgroundColor: "pink",
-        position: "relative",
+        backgroundImage: "url('/archivebackground.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "2.5rem",
       }}
     >
-      {/* Both buttons stacked on the right, shifted up */}
       <div
         style={{
-          position: "absolute",
-          right: "8%",
-          top: "38%",
-          transform: "translateY(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          gap: "1.6rem",
-          alignItems: "center",
+          fontFamily: ARIAL,
+          fontSize: "5.5vw",
+          fontWeight: 700,
+          color: TEAL,
+          letterSpacing: "0.04em",
+          textAlign: "center",
+          lineHeight: 1.1,
+          whiteSpace: "nowrap",
         }}
       >
-        {/* Label above buttons */}
-        <div
-          style={{
-            fontFamily: CALIBRI,
-            fontSize: "1.2rem",
-            fontWeight: 700,
-            color: TEAL,
-            letterSpacing: "0.08em",
-            textAlign: "center",
-            marginBottom: "0.4rem",
-          }}
-        >
-          GUULP: water archive
-        </div>
+        GUULP: water archive
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.6rem", alignItems: "center" }}>
         <button
           onClick={() => navigate("/entry")}
           style={btnStyle}
